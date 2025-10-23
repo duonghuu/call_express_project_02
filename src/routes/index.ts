@@ -1,13 +1,11 @@
-import { homeController } from "@controllers/homeController";
-import { responsysController } from "@controllers/responsysController";
+import { callController } from "@controllers/callController";
 import { Router } from "express";
 
 const router = Router();
 
-router.get("/", homeController.handleHomePage);
-router.get("/add-product", homeController.handleAddProduct);
-router.post("/responsys/register", responsysController.handleRegister);
-router.post("/responsys/signup_s2s", responsysController.handleSignupS2S);
-router.post("/responsys/trigger_s2s", responsysController.handleTriggerS2S);
+router.get("/call/signup_s2s", callController.signup_s2s);
+router.get("/call/trigger_s2s", callController.trigger_s2s);
+router.get("/call/multi_signup_s2s", callController.multi_signup_s2s);
+router.get("/call/multi_trigger_s2s", callController.multi_trigger_s2s);
 
 export default router;
